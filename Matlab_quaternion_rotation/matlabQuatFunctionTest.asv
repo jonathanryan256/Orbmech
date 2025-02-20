@@ -1,0 +1,7 @@
+function err = matlabQuatFunctionText(n)
+q = rand(1,4);
+q = 2*q-1;
+q = q/norm(q);
+Quat = quat(q)
+[yaw,pitch,roll] = eulerd(Quat,"ZYX","frame")
+quaternion(yaw,pitch,roll,"eulerd","ZYX","frame")
