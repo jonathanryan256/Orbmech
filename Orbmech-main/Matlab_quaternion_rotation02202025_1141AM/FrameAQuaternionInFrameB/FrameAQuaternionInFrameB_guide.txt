@@ -1,0 +1,11 @@
+An orientation quaternion describes the orientation of an object reletive to a frame.
+using rotatepoint(quaternion,[1,0,0]) will output where the nose of a plane is pointed
+
+To express a rotation quaternion in a different frame, say instead of frame A, frame B,
+use (Q_orientation*Q_A2B)
+
+Q_orientation*[0,1,0,0] takes the point [1,0,0] in the body frame and expresses it in frame A.
+Then, the point in frame A must be expressed in frame B. This is done by using Q_A2B.
+So, the point is rotated by Q_orientation, then by Q_A2B.
+
+Thus, Q_orientation_new = Q_A2B*Q_orientation
